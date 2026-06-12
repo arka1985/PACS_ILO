@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #f0f4f8;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --accent-color: #0284c7;
+  --border-color: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+  --glass-blur: blur(16px);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.glass-panel {
+  border: 3px solid transparent;
+  border-radius: 16px;
+  background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+              linear-gradient(to right, #4285F4, #EA4335, #FBBC05, #34A853) border-box;
+  padding: 2rem;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.config-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-group input {
+  background: #ffffff;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(#dadce0, #dadce0);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  color: #202124;
+  padding: calc(0.875rem - 1px) calc(1rem - 1px);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #80868b;
+}
+
+.input-group input:focus {
+  background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(to right, #4285F4, #EA4335, #FBBC05, #34A853);
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.15);
+}
+
+.btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+}
+
+.btn:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--glass-shadow);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: var(--text-primary);
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast.success { border-left: 4px solid var(--accent-color); }
+.toast.error { border-left: 4px solid #ef4444; }
+
+/* Tab Styles - Google Style */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #dadce0;
+}
+
+.tab-btn {
+  background: transparent;
+  color: #5f6368;
+  border: none;
+  padding: 0 2rem;
+  height: 48px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-btn:hover {
+  color: #202124;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.tab-btn.active-google {
+  color: #202124;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #4285F4 25%, #EA4335 25%, #EA4335 50%, #FBBC05 50%, #FBBC05 75%, #34A853 75%) 1;
+  background: transparent;
+  font-weight: 600;
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
