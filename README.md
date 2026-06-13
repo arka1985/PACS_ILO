@@ -1,27 +1,31 @@
 # PACS_ILO
 
-## DICOM Workflow Dashboard for NIOSH B Viewer and ILO Classification of Chest Radiographs
+## DICOM Workflow Dashboard for ILO Classification of Chest Radiographs
 
-> **Note:** This project is provided solely for educational, research, training, and academic purposes. It is intended to support standardized digital chest radiograph workflows and should not be considered a certified medical device or a substitute for professional medical judgment.
+> **Educational and Research Use Only**
+>
+> PACS_ILO is an open-source DICOM workflow solution developed to support education, training, research, and occupational health initiatives involving the **ILO International Classification of Radiographs of Pneumoconioses**. This software is not a certified medical device and should not be used as a substitute for professional medical judgment.
 
 ---
 
 ## Overview
 
-PACS_ILO is a DICOM-based imaging workflow solution developed to facilitate the review and classification of digital chest radiographs using the **ILO International Classification of Radiographs of Pneumoconioses**.
+PACS_ILO is a lightweight dashboard designed to simplify the management and review of digital chest radiographs within a DICOM-compatible environment.
 
-The project provides a simple dashboard for managing radiographic studies and streamlining image access for interpretation using **NIOSH B Viewer©**, thereby supporting occupational health surveillance, research, training, and academic activities.
+The project facilitates image retrieval, organization, and workflow management for users performing chest radiograph classification according to the **ILO International Classification of Radiographs of Pneumoconioses**.
+
+PACS_ILO is intended for educational, research, training, and occupational health applications.
 
 ---
 
 ## Features
 
-* DICOM image management and retrieval
+* DICOM-based imaging workflow
 * Simple and user-friendly dashboard
-* Integration with NIOSH B Viewer©
+* Chest radiograph management
 * Support for ILO classification workflows
-* Quick deployment through automated startup scripts
-* Suitable for occupational health, education, and research applications
+* Quick startup and deployment
+* Suitable for teaching, research, and occupational health programs
 
 ---
 
@@ -32,31 +36,28 @@ PACS_ILO/
 │
 ├── pacs-dashboard/
 ├── scripts/
-├── Start_Dashboard.bat
-└── bviewer-setup.exe
+└── Start_Dashboard.bat
 ```
+
+---
+
+## Requirements
+
+* Windows Operating System
+* DICOM-compatible imaging environment
+* Software capable of viewing and classifying digital chest radiographs
 
 ---
 
 ## Installation
 
-### Prerequisites
-
-* Windows Operating System
-* NIOSH B Viewer©
-* DICOM-compatible imaging environment
-
-### Setup
-
-1. Clone the repository:
+### Clone the Repository
 
 ```bash
 git clone https://github.com/arka1985/PACS_ILO.git
 ```
 
-2. Install NIOSH B Viewer© using the provided installer or official distribution source.
-
-3. Launch the dashboard:
+### Start the Dashboard
 
 ```bash
 Start_Dashboard.bat
@@ -64,21 +65,27 @@ Start_Dashboard.bat
 
 ---
 
-## Workflow
+## NIOSH BViewer© Compatibility
 
-1. Load or retrieve a chest radiograph.
-2. Access the study through the PACS dashboard.
-3. Open the image in NIOSH B Viewer©.
-4. Perform ILO classification.
-5. Save and document findings as required.
+PACS_ILO is designed to facilitate workflows involving **NIOSH BViewer©**.
+
+NIOSH funded the development of computer software that minimizes variability when reading digital chest radiographs. This software is known as **NIOSH BViewer©**.
+
+Users wishing to utilize NIOSH BViewer© should obtain the software directly from the official NIOSH website:
+
+https://www.cdc.gov/niosh/chestradiography/php/breaderexam/niosh-bviewer.html
+
+PACS_ILO does not distribute, modify, or claim ownership of NIOSH BViewer©.
 
 ---
 
-## NIOSH B Viewer©
+## Typical Workflow
 
-This project supports the use of **NIOSH B Viewer©**, a software application developed through funding from the U.S. National Institute for Occupational Safety and Health (NIOSH) to minimize variability when reading and classifying digital chest radiographs.
-
-NIOSH B Viewer© is copyrighted by NIOSH and remains the intellectual property of NIOSH. This repository does not claim ownership of NIOSH B Viewer© and is intended solely to facilitate its use within a DICOM-based workflow environment.
+1. Retrieve or load a chest radiograph.
+2. Access the study through PACS_ILO.
+3. Open the image using a compatible chest radiograph viewing application.
+4. Perform ILO classification.
+5. Record and archive findings as required.
 
 ---
 
@@ -87,9 +94,9 @@ NIOSH B Viewer© is copyrighted by NIOSH and remains the intellectual property o
 * Occupational Health Surveillance
 * Pneumoconiosis Screening Programs
 * Silicosis Surveillance
-* Chest Radiograph Classification
+* Academic Research
 * Medical Education and Training
-* Research and Academic Activities
+* Demonstration of DICOM Workflows
 
 ---
 
@@ -110,13 +117,23 @@ PhD (Computer Science & Engineering)
 
 ## Disclaimer
 
-This software has been developed for **educational, research, training, and academic purposes only**.
+This software has been developed and released in good faith for educational, research, training, and academic purposes.
 
-PACS_ILO is provided in good faith to support learning, scientific research, occupational health initiatives, and the standardized interpretation of chest radiographs. It is not intended to replace clinical judgment, professional medical interpretation, regulatory requirements, or certified commercial medical imaging systems.
+PACS_ILO is intended to support learning, research, occupational health activities, and the demonstration of DICOM-based imaging workflows. It is not intended to replace professional medical interpretation, clinical judgment, regulatory requirements, or certified commercial medical imaging systems.
 
-Users are solely responsible for ensuring compliance with applicable laws, regulations, institutional policies, data privacy requirements, and medical device regulations within their jurisdiction.
+Users are responsible for ensuring compliance with all applicable laws, regulations, institutional policies, and data privacy requirements.
 
-The author makes no warranties regarding the accuracy, completeness, reliability, or fitness of the software for any particular purpose. Use of this software is entirely at the user's own risk.
+The author assumes no responsibility for any direct or indirect consequences arising from the use of this software.
+
+---
+
+## Third-Party Software Notice
+
+NIOSH BViewer© is a software application developed through funding from the U.S. National Institute for Occupational Safety and Health (NIOSH) to minimize variability in the reading of digital chest radiographs.
+
+NIOSH BViewer© is copyrighted by NIOSH and remains the intellectual property of NIOSH.
+
+PACS_ILO is an independent project and is not affiliated with, endorsed by, sponsored by, or associated with NIOSH or the Centers for Disease Control and Prevention (CDC).
 
 ---
 
@@ -126,12 +143,6 @@ The author makes no warranties regarding the accuracy, completeness, reliability
 
 Copyright (c) 2026 Dr. Arkaprabha Sau
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the inclusion of the above copyright notice and this permission notice in all copies or substantial portions of the Software.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, subject to inclusion of the copyright notice and this permission notice in all copies or substantial portions of the software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
-
-### Third-Party Software Notice
-
-NIOSH B Viewer© is a separate software product developed and copyrighted by the U.S. National Institute for Occupational Safety and Health (NIOSH).
-
-The MIT License applied to PACS_ILO does not grant any rights to NIOSH B Viewer© or any other third-party software. Users must comply with the respective licensing terms of such software.
