@@ -25,12 +25,10 @@ def send_dicom(ip, port, ae_title, dicom_path):
     sop_class = ds.file_meta.MediaStorageSOPClassUID
     transfer_syntax = ds.file_meta.TransferSyntaxUID
     
-    # We propose the file's transfer syntax, plus the standard uncompressed ones as fallbacks
-    syntaxes = [transfer_syntax]
-    if '1.2.840.10008.1.2' not in syntaxes: syntaxes.append('1.2.840.10008.1.2')
-    if '1.2.840.10008.1.2.1' not in syntaxes: syntaxes.append('1.2.840.10008.1.2.1')
-    
-    ae.add_requested_context(sop_class, syntaxes)
+    # Propose ONLY the exact transfer syntax of the DICOM file.
+    # If we propose uncompressed fallbacks in the same context, the peer might 
+    # select uncompressed, but the dataset is still compressed, causing pynetdicom to fail.
+    ae.add_requested_context(sop_class, [transfer_syntax])
 
     print(f"Connecting to {ae_title} at {ip}:{port}...")
     assoc = ae.associate(ip, port, ae_title=ae_title.encode())
