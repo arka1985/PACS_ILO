@@ -8,9 +8,12 @@ cd /d "%~dp0pacs-dashboard"
 if exist ".next" rmdir /s /q ".next"
 
 if not exist "node_modules\" (
-    echo Installing dependencies for the first time... Please wait.
+    echo Installing Node dependencies for the first time... Please wait.
     call npm install
 )
+
+echo Installing/Updating Python dependencies...
+call python -m pip install pydicom pynetdicom
 
 set NODE_OPTIONS=--max_old_space_size=8192
 
