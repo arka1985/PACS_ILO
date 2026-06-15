@@ -4,7 +4,7 @@ from pydicom import dcmread
 from pynetdicom import AE, debug_logger
 
 # Use debug logger if you want more verbose output, but we keep it off by default for clean Next.js logs
-# debug_logger()
+debug_logger()
 
 def send_dicom(ip, port, ae_title, dicom_path):
     # Setup AE
